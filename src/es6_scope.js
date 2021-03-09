@@ -1,3 +1,4 @@
+// ES6 scope 예제
 function workout() {
   let gym = "Gym A";
 
