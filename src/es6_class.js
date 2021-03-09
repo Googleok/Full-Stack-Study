@@ -1,3 +1,4 @@
+// ES6 클래스 예제
 class User {
   constructor(name, interests) {
     this.name = name;
