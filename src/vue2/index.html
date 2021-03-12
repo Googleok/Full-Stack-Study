@@ -20,6 +20,7 @@
   </head>
   <body>
     <div id="app" v-cloak>
+      <message-list :items="messages" @delete="deleteMesssage"></message-list>
       <ul>
         <li v-for="message in messages">
           {{message.text}} - {{message.createdAt}}
@@ -35,12 +36,16 @@
       </ul>
     </div>
     <script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
-    <script>
+    <script type="module">
+      import MessageList from "./components/MessageList.js";
       let vm = new Vue({
         el: "#app",
         data: {
           messages: [],
           newMessage: "",
+        },
+        components: {
+          MessageList,
         },
         computed: {
           addDisabled() {
