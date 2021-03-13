@@ -1,0 +1,23 @@
+{
+  "name": "jepark_study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel --presets es2015 src/vue2 -d src/vue2/lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Googleok/spring_study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Googleok/spring_study/issues"
+  },
+  "homepage": "https://github.com/Googleok/spring_study#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}

@@ -20,7 +20,7 @@
   </head>
   <body>
     <div id="app" v-cloak>
-      <message-list :items="messages" @delete="deleteMesssage"></message-list>
+      <message-list :items="messages" @delete="deleteMessage"></message-list>
       <ul>
         <li v-for="message in messages">
           {{message.text}} - {{message.createdAt}}
@@ -57,7 +57,9 @@
             if (!this.newMessage) {
               return;
             }
+            let now = new Date();
             this.messages.push({
+              id: now.getTime(),
               text: this.newMessage,
               createdAt: new Date(),
             });
