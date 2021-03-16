@@ -7,19 +7,27 @@ mvn spring-boot:run
 # mysql
 
 - user 생성
+
   create user jepark@localhost identified by '1234';
 
 - 권한 부여
+
   grant all privileges on _._ to jepark@localhost identified by '1234' with grant option;
 
 - app_messages DB 사용 권한 부여
+
   show databases;
+
   use app_messages;
+
   ALTER USER 'jepark'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
 
 - messages 테이블 생성
+
   use app_messages;
+
   DROP TABLE IF EXISTS `messages`;
+
   CREATE TABLE `messages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `text` varchar(128) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -212,89 +220,3 @@ pom.xml 에 javassist 에 대한 dependency를 추가해주면 된다.
 
 ​
 [출처] Spring Boot - JPA (Hibernate) 연동 #3 - Error (creating bean with name 'entityManagerFactory')|작성자 최고영회
-
-# 개발시 유용한 사이트
-
-Colorscripter 코드 작성할 때 유용
-
-https://colorscripter.com/
-
-Spring 레퍼런스
-
-https://spring.io/docs/reference
-
-Spring Boot
-
-http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference
-
-Spring Boot Sample GitHub
-
-https://github.com/spring-projects/spring-boot.git
-
-Spring JPA reference
-
-https://docs.spring.io/spring-data/jpa/docs/current/reference
-
-Spring security
-
-http://docs.spring.io/spring-security/site/docs/4.2.2.RELEASE/reference
-
-Thymeleaf
-
-http://www.thymeleaf.org/documentation.html
-
-Ehcache
-
-http://www.ehcache.org/documentation
-
-Vue
-
-https://kr.vuejs.org
-
-https://joshua1988.github.io/web-development/vuejs/vuejs-tutorial-for-beginner/
-
-Bootstrap
-
-https://www.w3schools.com/bootstrap/default.asp
-
-JQuery
-
-https://www.w3schools.com/jquery/default.asp
-
-spring tutorial
-
-https://www.journaldev.com/2888/spring-tutorial-spring-core-tutorial
-
-강좌
-
-https://www.baeldung.com/
-
-java8, spring
-
-http://www.mkyong.com/
-
-assertThat 관련 정리
-
-http://sejong-wiki.appspot.com/assertThat
-
-웹 mockup 사이트
-
-https://mockflow.com
-
-파워포인트 무료 아이콘 사이트 링크
-
-https://www.iconfinder.com/search/?q=chart&price=free
-
-json 포맷으로 변경하여 보기
-
-http://jsonviewer.stack.hu/
-
-https://jsonformatter.curiousconcept.com/
-
-http://json.parser.online.fr/
-
-apidocs
-
-주석으로 api docs 만들어 주는 오픈 소스
-
-http://apidocjs.com/#param-api-success
