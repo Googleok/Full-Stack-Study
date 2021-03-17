@@ -83,7 +83,6 @@
               });
           },
           deleteMessage(message) {
-            console.log(message);
             axios
               .delete("api/messages/" + message.id)
               .then((response) => {
