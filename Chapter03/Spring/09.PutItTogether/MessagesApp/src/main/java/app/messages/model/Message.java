@@ -31,6 +31,10 @@ public class Message {
   public Message() {
   }
 
+  public Message(Integer id) {
+    this.id = id;
+  }
+
   public Message(String text) {
     this.text = text;
     this.createdDate = new Date();

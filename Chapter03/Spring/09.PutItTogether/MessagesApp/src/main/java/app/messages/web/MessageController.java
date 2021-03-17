@@ -7,7 +7,9 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -49,5 +51,15 @@ public class MessageController {
             return ResponseEntity.status(500).build();
         }
         return ResponseEntity.ok(saved);
+    }
+
+    @DeleteMapping("/api/messages/{id}")
+    @ResponseBody
+    public ResponseEntity<Message> deleteMessage(@PathVariable Integer id) {
+        Message deleted = messageService.delete(id);
+        if (deleted == null) {
+            return ResponseEntity.status(500).build();
+        }
+        return ResponseEntity.ok(deleted);
     }
 }

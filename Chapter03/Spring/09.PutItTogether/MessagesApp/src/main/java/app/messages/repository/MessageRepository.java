@@ -29,4 +29,10 @@ public class MessageRepository {
     Query<Message> query = session.createQuery(hql, Message.class);
     return query.list();
   }
+
+  public Message deleteMessage(Message message) {
+    Session session = sessionFactory.getCurrentSession();
+    session.delete(message);
+    return message;
+  }
 }
